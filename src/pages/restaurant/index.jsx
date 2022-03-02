@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axiosInstance from "../../services/axiosInstance";
 import { Container } from "react-bootstrap";
 import "./style.css";
+import bg1 from "../assets/temp/bg1.jpg";
 // import requestsService from "../../services/requests";
 
 function Restaurant() {
@@ -48,13 +49,51 @@ function Restaurant() {
 
     return (
 
-        <Container fluid>
+        <Container fluid className="containerRestaurant">
             {pageData.dadosDaLoja && (
-                <header className="" tyle={{ backgroundImage: `url(${pageData.dadosDaLoja.background})` }} >
-                    <p>
-                        {pageData.dadosDaLoja.titulo}
-                    </p>
-                </header>
+                // TODO: aqui é necessário pegar a url da imagem que vem no endpoint
+                // mas a api fica acusando erro de forma intermitente
+                <>
+                    <header className="headerRestaurant" style={{ backgroundImage: `url(${bg1})` }} >
+                        <h1 className="restaurantTitle" >
+                            {pageData.dadosDaLoja.titulo}
+                        </h1>
+                    </header>
+                    <main className="mainRestaurant">
+                        <div className="selectCategory" >
+                            <form action="">
+                                <select>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </form>
+                        </div>
+                        <div className="listOfProducts">
+                            {pageData.produtos.map(catProduct => {
+                                return (
+                                    <div key={`cat#${catProduct.id}`} className="category">
+                                        <h2  >{catProduct.titulo}</h2>
+                                        <hr />
+                                        {catProduct.produtos.map(product => {
+                                            return (
+                                                <div key={`cat#${catProduct.id}-product#${product.id}`} className="product">
+                                                    <img src={product.fotos[0]} alt="" />
+                                                    
+                                                    <div className="productInfo">
+                                                        <h4>{product.titulo}</h4>
+                                                        <p>{product.descricao}</p>
+                                                        <h3>{Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(product.preco)}</h3>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })}
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </main>
+                </>
             )}
         </Container>
 

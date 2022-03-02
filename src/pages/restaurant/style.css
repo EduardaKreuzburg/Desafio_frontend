@@ -1,6 +1,98 @@
+.containerRestaurant{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  height: fit-content;
+  width: 100%;
+}
+
 .headerRestaurant{
-  height: 300px;
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: contain; /* Resize the background image to cover the entire container */
+  width: 100% !important;
+  min-height: 276px;
+  height: 27vh;
+  background-size: cover; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(49, 52, 59, 0.27);
+  background-blend-mode: multiply;
+}
+
+.restaurantTitle{
+  color: #F7FFFC;
+  font-size: 38pt;
+  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.mainRestaurant {
+  background-color: rgba(247, 249, 255, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  /* width: 414px; */
+  /* height: 5000px; */
+  /* min-height: 100%; */
+}
+
+.selectCategory{
+  width: 90%;
+  height: 40px;
+}
+
+.listOfProducts {
+  width: 90%;
+}
+
+.category h2{
+  color: #557CF2;
+  font-weight: bold;
+}
+
+.category hr{
+  background-color: #557CF2;
+  height: 1px !important;
+  margin-top: 7.5px !important;
+  margin-bottom: 18.5px !important;
+}
+
+.product{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 90px;
+  width: auto;
+  border-radius: 7.5px;
+  background-color: #FFF;
+  padding: 7px 11px !important;
+  margin-bottom: 15px !important;
+}
+
+.product img{
+  width: 76px;
+  height: 76px;
+  border-radius: 25px;
+  object-fit: cover;
+  margin-right: 12px !important;
+}
+
+.productInfo{
+  width: 328px; 
+}
+
+.productInfo h4{
+  color: #3B59B2;
+  font-weight: bold;
+}
+.productInfo p{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #7997F2;
+}
+.productInfo h3{
+  color: #22C38E;
+  font-weight: bold;
 }
