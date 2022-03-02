@@ -3,6 +3,7 @@ import axiosInstance from "../../services/axiosInstance";
 import { Container } from "react-bootstrap";
 import "./style.css";
 import bg1 from "../assets/temp/bg1.jpg";
+import { Link } from "react-router-dom";
 // import requestsService from "../../services/requests";
 
 function Restaurant() {
@@ -77,15 +78,17 @@ function Restaurant() {
                                         <hr />
                                         {catProduct.produtos.map(product => {
                                             return (
-                                                <div key={`cat#${catProduct.id}-product#${product.id}`} className="product">
-                                                    <img src={product.fotos[0]} alt="" />
-                                                    
-                                                    <div className="productInfo">
-                                                        <h4>{product.titulo}</h4>
-                                                        <p>{product.descricao}</p>
-                                                        <h3>{Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(product.preco)}</h3>
+                                                <Link to={`product/${product.id}`} key={`cat#${catProduct.id}-product#${product.id}`}>
+                                                    <div key={`cat#${catProduct.id}-product#${product.id}`} className="product">
+                                                        <img src={product.fotos[0]} alt="" />
+                                                        
+                                                        <div className="productInfo">
+                                                            <h4>{product.titulo}</h4>
+                                                            <p>{product.descricao}</p>
+                                                            <h3>{Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(product.preco)}</h3>
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                </Link>
                                             )
                                         })}
                                     </div>
