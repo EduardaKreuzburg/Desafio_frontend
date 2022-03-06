@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-    baseURL: 'https://catalogoapi.desafio.utalk.chat/',
+    // baseURL: 'https://apiprodutosutalk.herokuapp.com/',
+    baseURL: process.env.REACT_APP_API_URL,
 });
 
 export default axiosInstance;

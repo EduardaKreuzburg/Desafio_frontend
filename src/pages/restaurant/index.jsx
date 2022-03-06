@@ -18,6 +18,7 @@ function Restaurant() {
         //         console.log(res);
         //     })
 
+        // FIXME: corrigir essa forma de realizar a chamada posteriormente
         axiosInstance.get('produtos/')
             .then((res) => {
                 console.log(res);
@@ -53,7 +54,7 @@ function Restaurant() {
         <Container fluid className="containerRestaurant">
             {pageData.dadosDaLoja && (
                 // TODO: aqui é necessário pegar a url da imagem que vem no endpoint
-                // mas a api fica acusando erro de forma intermitente
+                // mas a api não está buscando a URL da imagem do estabelecimento, então ficou assim...
                 <>
                     <header className="headerRestaurant" style={{ backgroundImage: `url(${bg1})` }} >
                         <h1 className="restaurantTitle" >

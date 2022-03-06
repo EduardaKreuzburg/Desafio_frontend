@@ -52,7 +52,8 @@
 
 .category hr{
   background-color: #557CF2;
-  height: 1px !important;
+  /* height: 1px !important; */
+  opacity: 100%;
   margin-top: 7.5px !important;
   margin-bottom: 18.5px !important;
 }
@@ -68,6 +69,7 @@
   background-color: #FFF;
   padding: 7px 11px !important;
   margin-bottom: 15px !important;
+  box-shadow: 0px 4px 14px rgba(59, 89, 178, 0.15);
 }
 
 .product img{

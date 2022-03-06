@@ -1,0 +1,35 @@
+.navbarCA {
+  background-color: #557CF2 !important;
+  padding: 12px 20px !important;
+  border-radius: 0;
+}
+
+.navbarContent {
+  display: flex;
+}
+
+.brandBox {
+  display: flex;
+}
+
+.brandBox h2 {
+  font-weight: bold;
+  margin-left: 5px !important;
+  color: #FFF;
+}
+
+.actionsMenuBox {
+  display: flex;
+}
+
+.cartBox {
+  background-color: #22C38E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33px;
+  height: 33px;
+  border-radius: 100%;
+  margin-right: 10px !important;
+  cursor: pointer;
+}

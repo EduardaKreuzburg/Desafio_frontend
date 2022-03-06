@@ -2,8 +2,43 @@
   margin: 0 !important;
   padding: 0 !important;
   border: 0 !important;
+  font-family: "Gordita";
 }
 
 a {
   text-decoration: none !important;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+  -webkit-appearance: none;
+}
+
+input[type=number] { 
+ -moz-appearance: textfield;
+ appearance: textfield;
+}
+
+input:focus {
+  outline-color: #557CF2;
+}
+
+@font-face {
+  font-family: "Gordita";
+  src:          url("./common/assets/fonts/GorditaRegular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gordita";
+  src:          url("./common/assets/fonts/GorditaMedium.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gordita";
+  src:          url("./common/assets/fonts/GorditaBold.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
 }
