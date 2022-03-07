@@ -1,7 +1,7 @@
-.containerProduct{
-  min-height: 100vh;
+.containerProduct {
+  min-height: calc(100vh - 52.8px);
   height: fit-content;
-  /* background-color: rgba(247, 249, 255, 1); */
+  background-color: rgba(247, 249, 255, 1);
 }
 
 .containerProduct img {
@@ -15,8 +15,7 @@
   width: 100%;
   padding: 20px 20px !important;
   padding-bottom: 28px !important;
-  background-color: rgba(247, 249, 255, 1);
-  min-height: 50vh;
+  min-height: calc(100vh - (52.8px + 414px + 168px));
 }
 
 .containerProduct h2 {
