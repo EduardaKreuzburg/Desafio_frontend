@@ -23,6 +23,13 @@
   display: flex;
 }
 
+.badgeOrder {
+  transform: translate(-5px, -5px) !important;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 4px !important;
+}
+
 .cartBox {
   background-color: #22C38E;
   display: flex;
@@ -33,4 +40,43 @@
   border-radius: 100%;
   margin-right: 10px !important;
   cursor: pointer;
+}
+
+.drawerMenuBody {
+  display: flex;
+  justify-content: center;
+  background-color: #31343B;
+  border-left: 1pt solid #707070 !important;
+}
+
+.drawerMenuBodyNav {
+  display: flex !important;
+  justify-content: start !important;
+  align-items: center !important;
+  padding-right: 0 !important;
+}
+
+.drawerMenuBodyNav > a {
+  color: #A6BDBB !important;
+  font-size: 17px;
+  font-weight: bold;
+  width: 70%;
+  margin-bottom: 22pt !important;
+  margin-left: 32pt !important;
+}
+
+.drawerMenuBodyNav > a:first-child { 
+  margin-right: 32pt !important;
+  margin-top: 37pt !important;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  width: auto;
+}
+
+.drawerMenuBodyNav > a:first-child button{  
+  background-color: #5CB85C;
+  color: #FFFFFF;
+  border-radius: 19pt;
+  padding: 8pt 50pt !important;
 }
