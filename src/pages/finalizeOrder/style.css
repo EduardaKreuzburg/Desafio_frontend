@@ -1,0 +1,98 @@
+.containerFinalize {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 52.8px);
+  height: fit-content;
+  width: 100%;
+  background-color: rgba(247, 249, 255, 1);
+}
+
+.containerFinalize h2 {
+  color: #3b59b2;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+
+
+.contentFinalize {
+  margin: 0px 20px !important;
+  min-height: calc(100vh - (53px + 123px + 54px + 45px));
+  height: fit-content;
+}
+
+.contentFinalize .deliveryBox {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 22px !important;
+}
+
+.contentFinalize .deliveryBox div{ 
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #FFF;
+  height: 65px;
+  width: 48%;
+  font-size: 16px;
+  color: #6F7380;
+  border: 3px solid #DFE4F2 !important;
+
+  box-shadow: 0px 2px 1px rgba(177, 182, 199, 0.16);
+
+  box-sizing: border-box;
+}
+
+.contentFinalize .contactInfosBox {
+  display: flex;
+  flex-direction: column;
+  padding: 15px !important;
+  background-color: #fff;
+  
+  border-radius: 7.5pt;
+  margin-bottom: 11px !important;
+  height: 220px;
+  
+  box-shadow: 0px 4px 14px rgba(59, 89, 178, 0.15);
+}
+
+.contentFinalize .contactInfosBox label {
+  color: rgba(78, 81, 89, 1);
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 6px !important;
+}
+
+.contentFinalize .contactInfosBox input {
+  font-size: 20px;
+  padding: 8px 13px !important;
+  border: 2px solid #DFE4F2 !important;
+  border-radius: 12pt;
+  margin-bottom: 9px !important;
+}
+
+.contentFinalize .paymentModeBox {
+  display: flex;
+  flex-direction: column;
+  padding: 15px !important;
+  background-color: #fff;
+  
+  border-radius: 7.5pt;
+  margin-bottom: 11px !important;
+  height: 150px;
+  
+  box-shadow: 0px 4px 14px rgba(59, 89, 178, 0.15);
+}
+
+.contentFinalize .paymentModeBox select {
+  padding: 8px 15px !important;
+  font-size: 15px;
+  color: #6F7380;
+  border: 2px solid #DFE4F2 !important;
+  border-radius: 5pt;
+  margin-top: 10px !important;
+}
+
+.contentFinalize .paymentModeBox select:focus {
+  outline-color: #557CF2;
+}
