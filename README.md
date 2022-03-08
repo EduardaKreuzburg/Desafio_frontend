@@ -8,7 +8,7 @@
    * [Layout](#-layout)
    * [Funcionalidades do projeto](#-funcionalidades-do-projeto)
    * [Como iniciar o projeto](#-como-iniciar-o-projeto)
-   * [Ferramentas externas utilizadas](#⚙️-ferramentas-externas-utilizadas)
+   * [Ferramentas externas utilizadas](#%EF%B8%8F-ferramentas-externas-utilizadas)
    * [Sugestões](#-sugestões)
 <!--te-->
 
