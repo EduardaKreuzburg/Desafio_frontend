@@ -4,12 +4,12 @@
 Índice
 =================
 <!--ts-->
-   * [Sobre o projeto](#💻-sobre-o-projeto)
-   * [Layout](#🎨-layout)
-   * [Funcionalidades do projeto](#🔨-funcionalidades-do-projeto)
-   * [Como iniciar o projeto](#🚀-como-iniciar-o-projeto)
-   * [Ferramentas externas utilizadas](#⚙️-ferramentas-externas-utilizadas)
-   * [Sugestões](#💡-sugestões)
+   * [Sobre o projeto](#-sobre-o-projeto)
+   * [Layout](#-layout)
+   * [Funcionalidades do projeto](#-funcionalidades-do-projeto)
+   * [Como iniciar o projeto](#-como-iniciar-o-projeto)
+   * [Ferramentas externas utilizadas](#-ferramentas-externas-utilizadas)
+   * [Sugestões](#-sugestões)
 <!--te-->
 
 💻 Sobre o projeto
