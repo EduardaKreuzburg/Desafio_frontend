@@ -35,7 +35,7 @@ function CANavBar() {
                 <path fill="#F7FFFC" d="M24 2.667c-.621 0-1.159.429-1.3 1.033l-1.299 5.633H4a1.33 1.33 0 0 0-1.051.513 1.339 1.339 0 0 0-.244 1.144l2.667 10.667a1.335 1.335 0 0 0 1.295 1.009H20c.621 0 1.159-.428 1.3-1.033l3.76-16.3h4.273V2.666H24zM18.94 20H7.708l-2-8h15.077l-1.845 8zM10.667 26.667a2.667 2.667 0 1 1-5.334 0 2.667 2.667 0 0 1 5.334 0zM21.333 26.667a2.667 2.667 0 1 1-5.334 0 2.667 2.667 0 0 1 5.334 0z" />
               </svg>
               {orders.length > 0 && (
-                <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger badgeOrder">
+                <span className="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger badgeOrder">
                   {orders.length}
                   <span class="visually-hidden">unread messages</span>
                 </span>
@@ -43,7 +43,7 @@ function CANavBar() {
             </div>
 
           </Link>
-          <Navbar.Toggle aria-controls="offcanvasNavbar" className="menuBarButton" onClick={handleShow} onClic>
+          <Navbar.Toggle aria-controls="offcanvasNavbar" className="menuBarButton" onClick={handleShow}>
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#fff" className="bi bi-list" viewBox="0 0 16 16">
               <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
             </svg>
@@ -58,7 +58,7 @@ function CANavBar() {
         >
           <Offcanvas.Body className="drawerMenuBody">
             <Nav className="justify-content-end flex-grow-1 pe-3 drawerMenuBodyNav">
-              <Link to="/cart" closeButton><button onClick={handleClose}>Abrir carrinho</button></Link>
+              <Link to="/cart"><button onClick={handleClose}>Abrir carrinho</button></Link>
               <Nav.Link>Informações e Endereço</Nav.Link>
               <Nav.Link>Horário de atendimento</Nav.Link>
               <Nav.Link>Ligar para a empresa</Nav.Link>

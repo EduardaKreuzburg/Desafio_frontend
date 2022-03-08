@@ -1,16 +1,19 @@
 import { useEffect, useState, useContext } from "react";
 import { Container } from "react-bootstrap";
 import "./style.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axiosInstance from "../../services/axiosInstance";
 import { OrderContext } from "../../common/providers/orderContext";
 
 function Product() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [pageData, setPageData] = useState();
   const [productToOrder, setProductToOrder] = useState(
     {
       idProduto: null,
+      imageUrl: "",
+      titulo: "",
       precoBase: null,
       precoTotal: null,
       cod: "",
@@ -23,6 +26,7 @@ function Product() {
 
   const addToCart = () => {
     setOrders([...orders, productToOrder]);
+    navigate('/', { replace: true });
   }
 
   const addAdditionalRadio = (additional, option) => {
@@ -77,7 +81,7 @@ function Product() {
       const newProductToOrder = {
         ...productToOrder,
         adicionais: toNewAdicionais,
-        precoTotal: productToOrder.precoTotal + opcao.preco
+        precoTotal: productToOrder.precoTotal + (opcao.preco * productToOrder.qtProduto)
       }
 
       setProductToOrder(newProductToOrder);
@@ -95,7 +99,7 @@ function Product() {
     const newProductToOrder = {
       ...productToOrder,
       adicionais: toNewAdicionais,
-      precoTotal: productToOrder.precoTotal - opcao.preco
+      precoTotal: productToOrder.precoTotal - (opcao.preco * productToOrder.qtProduto)
     }
 
     setProductToOrder(newProductToOrder);
@@ -147,6 +151,8 @@ function Product() {
 
         setProductToOrder({
           idProduto: res.data.id,
+          imageUrl: res.data.fotos[0],
+          titulo: res.data.titulo,
           precoBase: res.data.preco,
           precoTotal: res.data.preco,
           cod: res.data.codigo,
@@ -193,12 +199,12 @@ function Product() {
             <hr />
 
             {pageData.adicionais.map((adicional, indexAdicional) => (
-              <div className="additional" >
+              <div className="additional" key={adicional.id} >
                 <h2>{adicional.titulo}</h2>
 
                 {adicional.opcoes.map((opcao, indexOpcao) => {
                   return (
-                    <div className="additionalOption">
+                    <div className="additionalOption" key={opcao.id}>
                       <div className="OptionTextBox">
                         <p>{opcao.titulo}</p>
                         <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(opcao.preco)}</p>
@@ -207,7 +213,7 @@ function Product() {
                       {adicional.tipo === 'incremento' ? (
                         <div>
                           <button onClick={() => { setSumAdditional(false, productToOrder.adicionais.find(a => a.idAdicional === adicional.id), productToOrder.adicionais[indexAdicional].opcoes.find(op => op.idOpcao === opcao.id)) }}>-</button>
-                          <input type="number" name="" id="" min={adicional.min} max={adicional.max} value={productToOrder.adicionais[indexAdicional].opcoes.find(op => op.idOpcao === opcao.id).qtAdicional} />
+                          <input type="number" name="" id="" min={adicional.min} max={adicional.max} value={productToOrder.adicionais[indexAdicional].opcoes.find(op => op.idOpcao === opcao.id).qtAdicional} readOnly />
                           <button onClick={() => { setSumAdditional(true, productToOrder.adicionais.find(a => a.idAdicional === adicional.id), productToOrder.adicionais[indexAdicional].opcoes.find(op => op.idOpcao === opcao.id)) }}>+</button>
                         </div>
                       ) : (
@@ -218,7 +224,7 @@ function Product() {
                               type="radio"
                               name="checkBoxAdicional"
                               id="optionRadio"
-                              onClick={() => {
+                              onChange={() => {
                                 addAdditionalRadio(adicional, opcao, { productToOrder, indexAdicional, indexOpcao, pageData });
                               }}
                               checked={!!productToOrder.adicionais[indexAdicional].opcoes.find(op => op.idOpcao === opcao.id)}
