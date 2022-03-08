@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import { Container } from "react-bootstrap";
 import "./style.css";
 import { useNavigate, useParams } from "react-router-dom";
-import axiosInstance from "../../services/axiosInstance";
+import axiosInstance from "../../config/axiosInstance";
 import { OrderContext } from "../../common/providers/orderContext";
 
 function Product() {
@@ -107,10 +107,8 @@ function Product() {
   }
 
   useEffect(() => {
-    // FIXME: corrigir essa forma de realizar a chamada posteriormente
     axiosInstance.get(`produto/${id}`)
       .then((res) => {
-        console.log(res);
         let adicionais = [];
 
         if (res.data.adicionais.length > 0) {
@@ -165,25 +163,16 @@ function Product() {
       })
       .catch((error) => {
         if (error.response) {
-          // A requisição foi feita e o servidor respondeu com um código de status
-          // que sai do alcance de 2xx
           console.error(error.response.data);
           console.error(error.response.status);
           console.error(error.response.headers);
         } else if (error.request) {
-          // A requisição foi feita mas nenhuma resposta foi recebida
-          // `error.request` é uma instância do XMLHttpRequest no navegador e uma instância de
-          // http.ClientRequest no node.js
           console.error(error.request);
         } else {
-          // Alguma coisa acontenceu ao configurar a requisição que acionou este erro.
           console.error('Error', error.message);
         }
         console.error(error.config);
       })
-      .finally((end) => {
-        console.log(end);
-      });
   }, [id]);
 
   return (

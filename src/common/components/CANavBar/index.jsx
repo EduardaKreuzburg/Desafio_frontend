@@ -37,7 +37,7 @@ function CANavBar() {
               {orders.length > 0 && (
                 <span className="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger badgeOrder">
                   {orders.length}
-                  <span class="visually-hidden">unread messages</span>
+                  <span className="visually-hidden">unread messages</span>
                 </span>
               )}
             </div>

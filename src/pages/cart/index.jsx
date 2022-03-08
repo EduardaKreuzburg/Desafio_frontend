@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { Fragment, useContext } from "react";
 import { Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { OrderContext } from "../../common/providers/orderContext";
@@ -35,7 +35,7 @@ function Cart() {
           <main className="contentOrder">
 
             {orders.map((product, indexProduct) => (
-              <>
+              <Fragment key={`${product.idProduto}#${indexProduct}`}>
                 <div className="itemOrder">
                   <div className="headerItemOrder">
 
@@ -64,12 +64,12 @@ function Cart() {
 
                   <div className="additionalContent">
                     {product.adicionais.map(adicional => (
-                      <div className="additionalItem">
+                      <div className="additionalItem" key={adicional.idAdicional}>
                         <h3 className="additionalTitle">{adicional.titulo}</h3>
                         <div className="additionalOption">
                           <ul className="listAdditional">
                             {adicional.opcoes.map(opcao => (
-                              <li>
+                              <li key={opcao.idOpcao}>
                                 <p> <button /> {`${opcao.qtAdicional}x ${opcao.titulo}`}</p>
                                 <p className="priceOption">{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(opcao.qtAdicional * opcao.preco)}</p>
                               </li>
@@ -80,7 +80,7 @@ function Cart() {
                     ))}
                   </div>
                 </div>
-              </>
+              </ Fragment>
             ))}
 
           </main>
