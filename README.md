@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+<h1 align="center">CatálogoApp</h1>
+<img src="./assets/sg.png" alt="CatálogoApp">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Índice
+=================
+<!--ts-->
+   * [Sobre o projeto](#💻-sobre-o-projeto)
+   * [Layout](#🎨-layout)
+   * [Funcionalidades do projeto](#🔨-funcionalidades-do-projeto)
+   * [Como iniciar o projeto](#🚀-como-iniciar-o-projeto)
+   * [Ferramentas externas utilizadas](#⚙️-ferramentas-externas-utilizadas)
+   * [Sugestões](#💡-sugestões)
+<!--te-->
 
-## Available Scripts
+💻 Sobre o projeto
+===========
 
-In the project directory, you can run:
+A aplicação é um catálogo de produtos para lojas onde o usuário consegue ver os produtos disponíveis do estabelecimento, adicionar em seu carrinho ou remover algum produto que desejar e finalizar o seu pedido para a loja. 
+
+
+🎨 Layout
+============
+
+O layout da aplicação está disponível no AdobeXD:
+
+<a href="https://xd.adobe.com/view/7a57c282-fd52-4d1e-b5a1-586df2dad90a-2f04/grid">
+
+<img alt="Layout" src="https://img.shields.io/badge/Acessar%20Layout-AdobeXD-%23557CF2">
+
+</a></br>
+
+🔨 Funcionalidades do projeto
+============
+
+- [x] Listar produtos
+- [x] Adicionar produtos no carrinho
+- [x] Selecionar complementos do produto
+- [x] Excluir produto do carrinho
+- [x] Listar carrinho
+
+
+🚀 Como iniciar o projeto
+==================
+
+Esse projeto foi iniciado com [Create React App](https://github.com/facebook/create-react-app).
+
+É necessário criar um arquivo `.env` na raiz do projeto conforme o padrão do arquivo de exemplo `.env-example`, este que já possui a URL da API padrão utilizada durante o desenvolvimento.
+
+## Scripts Disponíveis
+
+No diretório do projeto, você pode rodar os seguintes scripts para iniciar o projeto (isto já com o npm instalado):
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Executa a aplicação em modo de desenvolvimento.\
+Abrindo [http://localhost:3000](http://localhost:3000) para visualização no navegador.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+A página irá atualizar automaticamente a cada alteração no código enquanto estiver executando no modo desenvolvimento.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+⚙️ Ferramentas externas utilizadas
+==================
 
-### `npm run build`
+- React Select: Se trata de uma lib de components Select, que neste caso foi usado para montar o multi-select com filtro que havia no layout.
+> https://react-select.com/home
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Axios: É uma biblioteca popular responsável por facilitar a lógica de requisições HTTP. E foi utilizada para realizar as requisições para a API.
+> https://axios-http.com/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React Router: É uma popular biblioteca do React responsável por facilitar a lógica de rotas para os componentes, mantendo o comportamento de SPA.
+> https://reactrouter.com/
 
-### `npm run eject`
+💡 Sugestões
+============
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- `Cores menu e botão fechar`: 
+    -
+   - Ao abrir o **menu**, podemos perceber que o menu não possui um botão para fechar a aba e continuar navegando no app. O usuário pode não saber onde clicar para fechar a aba menu.
+   - As cores do menu <b style="background-color:#31343B">"gray-darker"</b> e <b style="background-color:#5CB85C">"#5CB85C"</b> são bastante diferentes das cores padrões do aplicativo
+    e acabam desviando muito do padrão. Acredito que deixando a cor de fundo <b style="background-color:#F7F9FF; color: #000">"#F7F9FF"</b> no menu e colocando uma sombra e o botão da cor <b style="background-color:#557CF2">"#557CF2"</b> já teria ficando melhor.
+- `Alguns itens da api divergem do layout`:
+    -
+   - O endpoint de fazer pedido (apesar de não estar funcionando e acusar 404) não tinha previsto no "corpo" da requisição parâmetros para "observações do pedido", "nome do cliente do pedido".
+   - No layout também estava previsto que o estabelecimento teria um preço de entrega e valor mínimo de pedido para ser exibido (como aparece na tela 3 e 4, que seriam o carrinho e  finalizar pedido respectivamente), mas nenhum dos endpoints retorna tal informação.
+   - O endpoint "https://apiprodutosutalk.herokuapp.com/produtos" retorna algumas informações do estabelecimento também, mas onde deveria retornar a URL para a imagem de fundo do estabelecimento, acaba retornando o caminho para a imagem dentro do servidor.
+- `Ter uma documentação da API`:
+    -
+    - Seria interessante ter uma documentação da API, algo como o swagger possibilita ou algo como tem na Umbler (https://api.umbler.com/docs/index.html). Assim possibilita ter uma ideia melhor do que é necessário enviar e o que é possível se receber deste endpoint em diferentes cenários.
+- `Tempo`:
+    -
+    - Além disso, talvez seria interessante um pouco mais de tempo também, talvez uma semana a mais. Pois se a ideia seria também estimular a conhecer essas ferramentas além do mínimo no desafio, ficou pouco tempo para procurar e explorar as questões que estão como "bônus". 
