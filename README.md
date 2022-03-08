@@ -59,7 +59,7 @@ A página irá atualizar automaticamente a cada alteração no código enquanto 
 
 
 ⚙️ Ferramentas externas utilizadas
-==================
+============
 
 - React Select: Se trata de uma lib de components Select, que neste caso foi usado para montar o multi-select com filtro que havia no layout.
 > https://react-select.com/home
