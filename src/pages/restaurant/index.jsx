@@ -4,13 +4,65 @@ import { Container } from "react-bootstrap";
 import "./style.css";
 import bg1 from "../assets/temp/bg1.jpg";
 import { Link } from "react-router-dom";
+import Select from 'react-select';
 
 function Restaurant() {
     const [pageData, setPageData] = useState({});
+    const [options, setOptions] = useState([]);
+    const [optionsToFilter, setOptionsToFilter] = useState([]);
+
+    const selectStyles = {
+        control: ( styles ) => {
+            return {
+                ...styles,
+                backgroundColor: '#FFF',
+                border: '2pt solid #DFE4F2 !important',
+                borderRadius: '5pt',
+                padding: '8px 10px !important',
+            }
+        },
+        multiValue: ( styles ) => {
+            return {
+                ...styles,
+                backgroundColor: '#557CF2',
+                borderRadius: '19pt',
+                paddingTop: '3px !important',
+                paddingBottom: '3px !important',
+                paddingLeft: '24px !important',
+                paddingRight: '13px !important',
+                marginLeft: '3px !important'
+            }
+        },
+        multiValueLabel: ( styles ) => {
+            return {
+                ...styles,
+                color: '#FFF',
+                fontSize: '16px'
+            }
+        },
+        multiValueRemove: ( styles ) => {
+            return {
+                ...styles,
+                color: '#FFF',
+                width: '16px',
+                svg: {
+                    width: '20px !important',
+                    height: '20px !important'
+                },
+                ':hover': {
+                    color: '#FFF',
+                    backgroundColor: '#3B59B2'
+                }
+            }
+        },
+    }
 
     useEffect(() => {
         axiosInstance.get('produtos/')
             .then((res) => {
+                const toOptionSelect = res.data.produtos.map(produto => ({ value: produto.id, label: produto.titulo }));
+                setOptions(toOptionSelect);
+                setOptionsToFilter(toOptionSelect);
                 setPageData(res.data);
             })
             .catch((error) => {
@@ -41,24 +93,31 @@ function Restaurant() {
                     </header>
                     <main className="mainRestaurant">
                         <div className="selectCategory" >
-                            <form action="">
-                                <select>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-                            </form>
+                            <Select
+                                defaultValue={options}
+                                onChange={(values) => {
+                                    console.log(values);
+                                    setOptionsToFilter(values);
+                                }}
+                                isMulti
+                                name="categories"
+                                options={options}
+                                className="basic-multi-select"
+                                classNamePrefix="select"
+                                placeholder="Filtrar Categorias..."
+                                styles={selectStyles}
+                            />
                         </div>
                         <div className="listOfProducts">
-                            {pageData.produtos.map(catProduct => {
+                            {optionsToFilter.map((catProduct) => {
                                 return (
-                                    <div key={`cat#${catProduct.id}`} className="category">
-                                        <h2  >{catProduct.titulo}</h2>
+                                    <div key={`cat#${pageData.produtos.find(cat => cat.id === catProduct.value).id}`} className="category">
+                                        <h2  >{pageData.produtos.find(cat => cat.id === catProduct.value).titulo}</h2>
                                         <hr />
-                                        {catProduct.produtos.map(product => {
+                                        {pageData.produtos.find(cat => cat.id === catProduct.value).produtos.map(product => {
                                             return (
-                                                <Link to={`product/${product.id}`} key={`cat#${catProduct.id}-product#${product.id}`}>
-                                                    <div key={`cat#${catProduct.id}-product#${product.id}`} className="product">
+                                                <Link to={`product/${product.id}`} key={`cat#${pageData.produtos.find(cat => cat.id === catProduct.value).id}-product#${product.id}`}>
+                                                    <div key={`cat#${pageData.produtos.find(cat => cat.id === catProduct.value).id}-product#${product.id}`} className="product">
                                                         <img src={product.fotos[0]} alt="" />
 
                                                         <div className="productInfo">
